@@ -1,0 +1,16 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Run Application",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/EthackingApp/main.py",
+            "python": "${workspaceFolder}/venv/Scripts/python.exe",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}"
+            },
+            "console": "externalTerminal"
+        }
+    ]
+}
