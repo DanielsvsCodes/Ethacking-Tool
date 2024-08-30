@@ -26,7 +26,7 @@ def main():
         print(f"{Fore.YELLOW}4. Network Tools")
         print(f"{Fore.YELLOW}5. Social Engineering")
         print(f"{Fore.YELLOW}6. Miscellaneous")
-        print(f"{Fore.YELLOW}7. Exit")
+        print(f"{Fore.RED}7. Exit")
 
         choice = input(f"{Fore.GREEN}Select a category: {Style.RESET_ALL}")
 

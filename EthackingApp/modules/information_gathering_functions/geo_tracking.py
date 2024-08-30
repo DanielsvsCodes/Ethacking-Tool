@@ -27,16 +27,21 @@ class GeoTracking:
     def display_geolocation(self, data):
         """Display geolocation data."""
         print(f"{Fore.GREEN}Geolocation data for {self.ip_address}:{Fore.RESET}")
-        print(f"  {Fore.YELLOW}Country: {Fore.RESET}{data['country']}")
-        print(f"  {Fore.YELLOW}Region: {Fore.RESET}{data['regionName']}")
-        print(f"  {Fore.YELLOW}City: {Fore.RESET}{data['city']}")
-        print(f"  {Fore.YELLOW}Latitude: {Fore.RESET}{data['lat']}")
-        print(f"  {Fore.YELLOW}Longitude: {Fore.RESET}{data['lon']}")
-        print(f"  {Fore.YELLOW}ISP: {Fore.RESET}{data['isp']}")
-        print(f"  {Fore.YELLOW}Organization: {Fore.RESET}{data['org']}")
-        print(f"  {Fore.YELLOW}AS: {Fore.RESET}{data['as']}")
-        print(f"  {Fore.YELLOW}Timezone: {Fore.RESET}{data['timezone']}")
+        print(f"{Fore.YELLOW}Country: {Fore.RESET}{data['country']}")
+        print(f"{Fore.YELLOW}Region: {Fore.RESET}{data['regionName']}")
+        print(f"{Fore.YELLOW}City: {Fore.RESET}{data['city']}")
+        print(f"{Fore.YELLOW}Latitude: {Fore.RESET}{data['lat']}")
+        print(f"{Fore.YELLOW}Longitude: {Fore.RESET}{data['lon']}")
+        print(f"{Fore.YELLOW}ISP: {Fore.RESET}{data['isp']}")
+        print(f"{Fore.YELLOW}Organization: {Fore.RESET}{data['org']}")
+        print(f"{Fore.YELLOW}AS: {Fore.RESET}{data['as']}")
+        print(f"{Fore.YELLOW}Timezone: {Fore.RESET}{data['timezone']}")
 
     def run(self):
         """Run the geo-tracking process."""
         self.fetch_geolocation()
+
+if __name__ == "__main__":
+    ip_address = input("Enter the IP address to track: ").strip()
+    geo_tracker = GeoTracking(ip_address)
+    geo_tracker.run()

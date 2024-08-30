@@ -19,7 +19,7 @@ def miscellaneous_menu():
         print(f"{Style.BRIGHT}{Fore.CYAN}Miscellaneous Tools{Style.RESET_ALL}")
         print(f"{Fore.YELLOW}1. Dark Web Scraper")
         print(f"{Fore.YELLOW}2. Log File Analysis")
-        print(f"{Fore.YELLOW}3. Back to Main Menu")
+        print(f"{Fore.RED}3. Back to Main Menu")
 
         choice = input(f"{Fore.GREEN}Select an option: {Style.RESET_ALL}")
 

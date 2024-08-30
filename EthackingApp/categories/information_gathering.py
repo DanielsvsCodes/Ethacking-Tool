@@ -29,7 +29,7 @@ def information_gathering_menu():
         print(f"{Fore.YELLOW}5. Subdomain Enumeration")
         print(f"{Fore.YELLOW}6. Geolocation Tracking")
         print(f"{Fore.YELLOW}7. DNS Spoofing")
-        print(f"{Fore.YELLOW}8. Back to Main Menu")
+        print(f"{Fore.RED}8. Back to Main Menu")
 
         choice = input(f"{Fore.GREEN}Select an option: {Style.RESET_ALL}")
 
@@ -55,8 +55,17 @@ def information_gathering_menu():
             else:
                 print(f"{Fore.RED}Invalid input. Please enter a valid host and port number.")
         elif choice == "5":
-            domain = input(f"{Fore.GREEN}Enter the domain to enumerate subdomains for (e.g., example.com): {Style.RESET_ALL}")
-            wordlist_path = input(f"{Fore.GREEN}Enter the path to the subdomain wordlist file: {Style.RESET_ALL}")
+            domain = input(f"{Fore.GREEN}Enter the domain to enumerate subdomains for (e.g., example.com): {Style.RESET_ALL}").strip()
+
+            use_default = input(f"{Fore.BLUE}Do you want to use the default wordlist? (y/n): ").strip().lower()
+            if use_default == 'y':
+                wordlist_path = None
+            else:
+                wordlist_path = input(f"{Fore.BLUE}Enter the path to your subdomain wordlist file (press [ENTER] to use the default list): ").strip()
+                if not os.path.isfile(wordlist_path):
+                    print(f"{Fore.RED}Error: The specified wordlist file does not exist.{Fore.RESET}")
+                    wordlist_path = None
+
             sub_enum = SubdomainEnumerator(domain, wordlist_path)
             sub_enum.run()
         elif choice == "6":

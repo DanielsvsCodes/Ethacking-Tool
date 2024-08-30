@@ -1,6 +1,6 @@
 from colorama import init, Fore, Style
-from modules.phishing_sim import run_phishing_sim
-from modules.clipboard_hijacking import run_clipboard_hijacking
+from modules.social_engineering_functions.phishing_sim import run_phishing_sim
+from modules.social_engineering_functions.clipboard_hijacking import run_clipboard_hijacking
 import os
 import subprocess
 
@@ -19,7 +19,7 @@ def social_engineering_menu():
         print(f"{Style.BRIGHT}{Fore.CYAN}Social Engineering Tools{Style.RESET_ALL}")
         print(f"{Fore.YELLOW}1. Phishing Simulation")
         print(f"{Fore.YELLOW}2. Clipboard Hijacking")
-        print(f"{Fore.YELLOW}3. Back to Main Menu")
+        print(f"{Fore.RED}3. Back to Main Menu")
 
         choice = input(f"{Fore.GREEN}Select an option: {Style.RESET_ALL}")
 

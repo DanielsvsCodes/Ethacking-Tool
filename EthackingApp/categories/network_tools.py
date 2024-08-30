@@ -21,7 +21,7 @@ def network_tools_menu():
         print(f"{Fore.YELLOW}1. Port Scanning")
         print(f"{Fore.YELLOW}2. Network Sniffing")
         print(f"{Fore.YELLOW}3. Wireless Tools")
-        print(f"{Fore.YELLOW}4. Back to Main Menu")
+        print(f"{Fore.RED}4. Back to Main Menu")
 
         choice = input(f"{Fore.GREEN}Select an option: {Style.RESET_ALL}")
 
