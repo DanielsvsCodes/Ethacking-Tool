@@ -1,5 +1,54 @@
+# Ignore virtual environment directory
+venv/
+env/
+.VENV/
+
+# Ignore Python bytecode files
 __pycache__/
-*.pyc
-*.pyo
-.env
-stolen_data
+*.py[cod]
+
+# Ignore build directories and files
+build/
+dist/
+*.egg-info/
+
+# Ignore logs and reports
+reports/
+*.log
+
+# Ignore sensitive security keys and certificates
+cosign.key
+cosign.pub
+EthicalHackingTool.sig
+
+# Ignore binary executables
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Ignore IDE-specific files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Ignore temporary files
+*.tmp
+*.temp
+*.swp
+*.bak
+*~
+
+# Ignore requirements and dependencies if installed locally
+site/
+local/
+lib/
+lib64/
+bin/
+include/
