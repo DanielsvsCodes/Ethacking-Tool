@@ -1,5 +1,5 @@
 from colorama import init, Fore, Style
-from EthackingApp.modules.miscellaneous_functions.dark_web_scraper import run_dark_web_scraper
+from EthackingApp.modules.miscellaneous_functions.dark_web_scraper import DarkWebScraper
 from EthackingApp.modules.miscellaneous_functions.log_analysis import run_log_analysis
 import os
 import subprocess
@@ -12,6 +12,21 @@ def clear_console():
         subprocess.call('cls', shell=True)
     else:
         subprocess.call('clear', shell=True)
+
+def run_dark_web_scraper():
+    """Run the Dark Web Scraper tool."""
+    url = input(f"{Fore.GREEN}Enter the .onion URL to scrape: ").strip()
+    
+    try:
+        scraper = DarkWebScraper(url)
+
+        renew_choice = input(f"{Fore.GREEN}Do you want to renew the Tor circuit before scraping? (yes/no): ").strip().lower()
+        if renew_choice == 'yes':
+            scraper.renew_tor_connection()
+
+        scraper.run()
+    except Exception as e:
+        print(f"{Fore.RED}An error occurred while running the Dark Web Scraper: {e}")
 
 def miscellaneous_menu():
     """Menu for Miscellaneous Tools"""
