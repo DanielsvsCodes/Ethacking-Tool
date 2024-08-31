@@ -34,17 +34,21 @@ def information_gathering_menu():
         choice = input(f"{Fore.GREEN}Select an option: {Style.RESET_ALL}")
 
         if choice == "1":
+            clear_console()
             domain = input(f"{Fore.GREEN}Enter the domain (e.g., example.com): {Style.RESET_ALL}")
             info = InfoGathering(domain)
             info.run()
         elif choice == "2":
+            clear_console()
             pt = PingTraceroute()
             pt.run()
         elif choice == "3":
+            clear_console()
             host = input(f"{Fore.GREEN}Enter the host to scan for open ports (e.g., example.com): {Style.RESET_ALL}")
             port_scanner = PortScanner(host)
             port_scanner.run()
         elif choice == "4":
+            clear_console()
             host = input(f"{Fore.GREEN}Enter the host to grab the banner from (e.g., example.com): {Style.RESET_ALL}")
             port = input(f"{Fore.GREEN}Enter the port number (e.g., 80): {Style.RESET_ALL}")
 
@@ -55,6 +59,7 @@ def information_gathering_menu():
             else:
                 print(f"{Fore.RED}Invalid input. Please enter a valid host and port number.")
         elif choice == "5":
+            clear_console()
             domain = input(f"{Fore.GREEN}Enter the domain to enumerate subdomains for (e.g., example.com): {Style.RESET_ALL}").strip()
 
             use_default = input(f"{Fore.BLUE}Do you want to use the default wordlist? (y/n): ").strip().lower()
@@ -69,10 +74,12 @@ def information_gathering_menu():
             sub_enum = SubdomainEnumerator(domain, wordlist_path)
             sub_enum.run()
         elif choice == "6":
+            clear_console()
             ip_address = input(f"{Fore.GREEN}Enter the IP address to track (e.g., 8.8.8.8): {Style.RESET_ALL}")
             geo_tracker = GeoTracking(ip_address)
             geo_tracker.run()
         elif choice == "7":
+            clear_console()
             target_domain = input(f"{Fore.GREEN}Enter the target domain to spoof (e.g., example.com): {Style.RESET_ALL}")
             fake_ip = input(f"{Fore.GREEN}Enter the fake IP address to redirect traffic to: {Style.RESET_ALL}")
             dns_spoofer = DNSSpoofing(target_domain, fake_ip)
