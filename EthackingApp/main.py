@@ -1,7 +1,7 @@
 from colorama import init, Fore, Style
 from categories.information_gathering import information_gathering_menu
 # from categories.vulnerability_scanning import vulnerability_scanning_menu
-# from categories.exploitation_tools import exploitation_tools_menu
+from categories.exploitation_tools import exploitation_tools_menu
 # from categories.network_tools import network_tools_menu
 # from categories.social_engineering import social_engineering_menu
 # from categories.miscellaneous import miscellaneous_menu
@@ -36,9 +36,9 @@ def main():
         # elif choice == "2":
         #     clear_console()
         #     vulnerability_scanning_menu()
-        # elif choice == "3":
-        #     clear_console()
-        #     exploitation_tools_menu()
+        elif choice == "3":
+            clear_console()
+            exploitation_tools_menu()
         # elif choice == "4":
         #     clear_console()
         #     network_tools_menu()
@@ -53,7 +53,6 @@ def main():
             break
         else:
             print(f"{Fore.RED}Invalid choice.")
-        input(f"{Fore.MAGENTA}Press Enter to continue...{Style.RESET_ALL}")
         clear_console()
 
 if __name__ == "__main__":
